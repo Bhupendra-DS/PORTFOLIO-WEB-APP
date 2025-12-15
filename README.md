@@ -1,73 +1,133 @@
-# Welcome to your Lovable project
+# Portfolio Website
 
-## Project info
+A modern, responsive portfolio website showcasing my expertise in Data Science, Machine Learning, and Applied AI. Built with cutting-edge web technologies and featuring interactive 3D visualizations.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🚀 Features
 
-## How can I edit this code?
+- **Modern UI/UX**: Clean, professional design with smooth animations and transitions
+- **3D Visualizations**: Interactive Three.js components including neural network and floating cube animations
+- **Responsive Design**: Fully responsive across all devices and screen sizes
+- **Dark Mode**: Built-in theme switching with smooth transitions
+- **Performance Optimized**: Fast loading times and optimized rendering
+- **SEO Friendly**: Proper meta tags and semantic HTML structure
 
-There are several ways of editing your application.
+## 🛠️ Tech Stack
 
-**Use Lovable**
+- **Frontend Framework**: React 18 with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS with custom animations
+- **UI Components**: shadcn/ui component library
+- **3D Graphics**: Three.js with React Three Fiber
+- **Animations**: Framer Motion
+- **Routing**: React Router DOM
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## 📋 Sections
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Hero Section**: Compelling introduction with animated 3D neural network visualization
+- **About**: Professional summary of expertise and experience
+- **Skills**: Categorized technical skills with interactive cards
+- **Experience**: Timeline of professional experience and internships
+- **Projects**: Showcase of key projects with detailed modals
+- **Education**: Academic qualifications and certifications
+- **Contact**: Professional contact information and social links
 
-**Use your preferred IDE**
+## 🚀 Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js (v18 or higher)
+- npm or yarn package manager
 
-Follow these steps:
+### Installation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Bhupendra-DS/PORTFOLIO-WEB-APP.git
+   cd PORTFOLIO-WEB-APP
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+4. **Open your browser**
+   Navigate to `http://localhost:5173` (or the port shown in terminal)
+
+### Build for Production
+
+```bash
+npm run build
 ```
 
-**Edit a file directly in GitHub**
+The production-ready files will be in the `dist` directory.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Preview Production Build
 
-**Use GitHub Codespaces**
+```bash
+npm run preview
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📁 Project Structure
 
-## What technologies are used for this project?
+```
+├── public/              # Static assets
+│   ├── Bhupendra_Singh_Resume.pdf
+│   └── ...
+├── src/
+│   ├── components/     # React components
+│   │   ├── layout/     # Header, Footer
+│   │   ├── sections/   # Page sections
+│   │   ├── three/      # Three.js components
+│   │   └── ui/         # shadcn/ui components
+│   ├── hooks/          # Custom React hooks
+│   ├── lib/            # Utility functions
+│   ├── pages/          # Page components
+│   └── index.css       # Global styles
+├── package.json
+└── vite.config.ts
+```
 
-This project is built with:
+## 🎨 Customization
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Updating Content
 
-## How can I deploy this project?
+- **Personal Information**: Edit `src/components/sections/About.tsx`
+- **Experience**: Update `src/components/sections/Experience.tsx`
+- **Projects**: Modify `src/components/sections/Projects.tsx`
+- **Skills**: Edit `src/components/sections/Skills.tsx`
+- **Contact**: Update `src/components/sections/Contact.tsx`
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### Styling
 
-## Can I connect a custom domain to my Lovable project?
+- Global styles: `src/index.css`
+- Tailwind config: `tailwind.config.ts`
+- Component-specific styles use Tailwind utility classes
 
-Yes, you can!
+## 🔗 Links
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- **Portfolio**: [View Live](https://your-portfolio-url.com)
+- **GitHub**: [@Bhupendra-DS](https://github.com/Bhupendra-DS)
+- **LinkedIn**: [Bhupendra Singh Shekhawat](https://linkedin.com/in/bhupendra-singh-shekhawat-3791372a5)
+- **Email**: bhupendrashekhawat2322@gmail.com
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 👨‍💻 Author
+
+**Bhupendra Singh Shekhawat**
+
+- Data Science & Applied AI Professional
+- Recent B.Tech CSE graduate pursuing PGDM in Data Science & Analytics (Applied AI)
+- Location: Bangalore, India
+
+---
+
+⭐ If you find this portfolio helpful, please consider giving it a star!
