@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 192 91% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 192 91% 36%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 192 91% 36%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(192 91% 36%) 0%, hsl(180 70% 45%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(210 40% 98%) 0%, hsl(210 40% 96%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(220 30% 98%) 0%, hsl(210 40% 96%) 50%, hsl(200 30% 95%) 100%);
+    --shadow-soft: 0 4px 20px -2px hsl(222 47% 11% / 0.08);
+    --shadow-glow: 0 0 40px hsl(192 91% 36% / 0.15);
+    --shadow-card: 0 2px 8px -2px hsl(222 47% 11% / 0.05), 0 8px 24px -4px hsl(222 47% 11% / 0.08);
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 185 80% 50%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 217 33% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 185 80% 50%;
+    --accent-foreground: 222 47% 6%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 185 80% 50%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(185 80% 50%) 0%, hsl(170 70% 45%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(222 47% 8%) 0%, hsl(222 47% 6%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(222 47% 6%) 0%, hsl(220 40% 8%) 50%, hsl(215 35% 7%) 100%);
+    --shadow-soft: 0 4px 20px -2px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 60px hsl(185 80% 50% / 0.2);
+    --shadow-card: 0 2px 8px -2px hsl(0 0% 0% / 0.2), 0 8px 24px -4px hsl(0 0% 0% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-6xl mx-auto px-6 sm:px-8 lg:px-12;
+  }
+
+  .section-padding {
+    @apply py-20 sm:py-28 lg:py-32;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .card-glass {
+    @apply bg-card/80 backdrop-blur-md border border-border/50 rounded-xl;
+    box-shadow: var(--shadow-card);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300;
+    background: var(--gradient-primary);
+    @apply text-primary-foreground hover:opacity-90 hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300;
+    @apply bg-secondary text-secondary-foreground border border-border hover:bg-secondary/80;
+  }
+
+  .skill-badge {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium;
+    @apply bg-secondary text-secondary-foreground border border-border/50;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-subtle {
+    animation: pulse-subtle 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes pulse-subtle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+}
