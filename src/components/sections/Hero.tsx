@@ -1,12 +1,9 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, FileText, Mail } from 'lucide-react';
-import RotatingProfileImage from '../three/RotatingProfileImage';
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <RotatingProfileImage />
-      
       <div className="section-container relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
