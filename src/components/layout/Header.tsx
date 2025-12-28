@@ -43,7 +43,7 @@ export default function Header() {
       <nav className="section-container">
         <div className="flex items-center justify-between h-16 md:h-20">
           <a href="#" className="font-heading text-xl font-semibold text-foreground">
-            Portfolio
+            Bhupendra Singh
           </a>
 
           {/* Desktop Nav */}
