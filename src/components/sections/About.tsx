@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import FloatingCube from '../three/FloatingCube';
+import ProfileImage from '../ProfileImage';
 
 export default function About() {
   const ref = useRef(null);
@@ -43,7 +43,7 @@ export default function About() {
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
             className="order-first md:order-last"
           >
-            <FloatingCube />
+            <ProfileImage />
           </motion.div>
         </div>
       </div>
