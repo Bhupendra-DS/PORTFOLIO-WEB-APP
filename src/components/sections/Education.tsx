@@ -5,16 +5,16 @@ import { GraduationCap, Award } from 'lucide-react';
 
 const education = [
   {
-    degree: 'PGDM in Data Science & Analytics (Applied AI)',
+    degree: 'PGDM – Data Science & Applied AI',
     institution: 'Imarticus Learning, Bangalore',
-    period: 'Pursuing',
+    period: '2025 – Present',
     focus: '',
   },
   {
-    degree: 'B.Tech in Computer Science & Engineering',
+    degree: 'B.Tech – Computer Science and Engineering',
     institution: 'Poornima University, Jaipur',
     period: '2021 – 2025',
-    focus: 'CGPA: 7.0 / 10',
+    focus: 'CGPA: 7.0',
   },
 ];
 
@@ -22,7 +22,6 @@ const certifications = [
   'Generative AI with Agentic AI – Udemy',
   'Center of Excellence in Data Science – Celebal Technologies',
   'Data Science Internship – Celebal Technologies',
-  'C++ Certification – Coding Ninjas',
 ];
 
 export default function Education() {

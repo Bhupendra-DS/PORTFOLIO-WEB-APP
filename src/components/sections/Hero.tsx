@@ -33,7 +33,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-4"
           >
-            Data Science & Analytics | Machine Learning | Generative AI
+            Data Science & Applied AI | Machine Learning | Generative AI
           </motion.p>
 
           <motion.p
@@ -42,7 +42,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.45 }}
             className="text-sm text-muted-foreground/80 max-w-2xl mx-auto mb-10"
           >
-            Recent B.Tech CSE graduate pursuing PGDM in Data Science & Analytics (Applied AI)
+            B.Tech CSE graduate pursuing PGDM in Data Science & Applied AI
           </motion.p>
 
           <motion.div
@@ -56,7 +56,7 @@ export default function Hero() {
               <ArrowDown size={18} />
             </a>
             <a 
-              href="/Bhupendra_Singh_Resume.pdf" 
+              href="/BHUPENDRA_SINGH_CV.pdf" 
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary"

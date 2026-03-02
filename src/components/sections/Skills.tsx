@@ -5,29 +5,70 @@ import { Code2, Brain, Sparkles, Database, Cloud } from 'lucide-react';
 
 const skillCategories = [
   {
-    title: 'Programming & Tools',
+    title: 'Programming',
     icon: Code2,
-    skills: ['Python', 'SQL', 'Git', 'GitHub', 'Jupyter Notebook', 'Excel'],
+    skills: ['Python', 'SQL', 'Bash (Basics)'],
   },
   {
     title: 'Machine Learning & AI',
     icon: Brain,
-    skills: ['Scikit-learn', 'TensorFlow', 'PyTorch', 'CNNs', 'LSTMs', 'Model Evaluation'],
+    skills: [
+      'Scikit-learn',
+      'TensorFlow',
+      'PyTorch',
+      'Deep Learning',
+      'Model Evaluation',
+      'Feature Engineering',
+    ],
   },
   {
-    title: 'Generative AI & LLMs',
-    icon: Sparkles,
-    skills: ['OpenAI API', 'LangChain', 'Hugging Face', 'RAG Pipelines', 'AI Agents'],
-  },
-  {
-    title: 'Data Engineering & Analytics',
+    title: 'Data Engineering & Databases',
     icon: Database,
-    skills: ['ETL Pipelines', 'Data Cleaning', 'Feature Engineering', 'EDA', 'Power BI', 'Snowflake (Basic)'],
+    skills: [
+      'ETL Pipelines',
+      'Data Cleaning',
+      'Data Transformation',
+      'Data Modeling',
+      'Pandas',
+      'NumPy',
+      'Snowflake (Basics)',
+      'PostgreSQL',
+      'MySQL',
+    ],
   },
   {
-    title: 'Cloud & Deployment',
+    title: 'Big Data & Processing',
+    icon: Database,
+    skills: ['Apache Spark (Basics)', 'PySpark (Basics)', 'Hadoop (Fundamentals)'],
+  },
+  {
+    title: 'MLOps, Deployment & Cloud',
     icon: Cloud,
-    skills: ['AWS (EC2, Lambda, SageMaker – Basics)', 'Streamlit', 'Flask'],
+    skills: [
+      'Streamlit',
+      'Flask',
+      'REST APIs',
+      'Docker (Fundamentals)',
+      'AWS (EC2, Lambda, S3 – Basics)',
+      'CI/CD (Fundamentals)',
+    ],
+  },
+  {
+    title: 'Generative AI & LLM Systems',
+    icon: Sparkles,
+    skills: [
+      'OpenAI API',
+      'LangChain',
+      'Hugging Face',
+      'RAG Pipelines',
+      'AI Agents',
+      'Vector Databases (FAISS – Basics)',
+    ],
+  },
+  {
+    title: 'Data Visualization & Tools',
+    icon: Code2,
+    skills: ['Power BI', 'Matplotlib', 'Seaborn', 'Git', 'GitHub', 'Jupyter Notebook', 'VS Code'],
   },
 ];
 

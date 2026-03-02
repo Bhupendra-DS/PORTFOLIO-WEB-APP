@@ -5,13 +5,24 @@ import { Briefcase } from 'lucide-react';
 
 const experiences = [
   {
+    role: 'AI Intern – Applied AI Program',
+    company: 'Imarticus Learning',
+    period: '2025 – Present',
+    points: [
+      'Developed an automated LinkedIn data scraping system extracting experience data of 1000+ professionals',
+      'Reduced manual candidate profiling effort by 80% through Python-based automation',
+      'Built structured datasets for analytics and AI-driven insights',
+      'Implemented data cleaning and transformation pipelines for downstream ML tasks',
+    ],
+  },
+  {
     role: 'AI/ML Intern – Computer Vision',
     company: 'VertEx Plus Technologies Ltd.',
     period: 'May 2025 – July 2025',
     points: [
-      'Developed an AI-powered pole detection system using CNNs, achieving 95%+ accuracy',
-      'Automated data preprocessing and annotation, reducing manual effort by 70% across 10,000+ images',
-      'Deployed and validated the solution, improving detection efficiency by 60%',
+      'Built a CNN-based pole detection model achieving 95%+ accuracy',
+      'Automated preprocessing pipeline for 10,000+ images, reducing manual effort by 70%',
+      'Improved detection efficiency by 60% through model optimization and validation',
     ],
   },
   {
@@ -19,10 +30,20 @@ const experiences = [
     company: 'Celebal Technologies',
     period: 'May 2024 – Aug 2024',
     points: [
-      'Processed and analyzed datasets with 500K+ records using Python and SQL',
-      'Performed ETL, feature engineering, and exploratory data analysis',
-      'Built Power BI dashboards that improved business decision-making time by 30%',
-      'Contributed to improved data quality metrics by 20%',
+      'Processed and analyzed 500K+ records performing ETL and feature engineering',
+      'Designed Power BI dashboards reducing business decision time by 30%',
+      'Improved data quality metrics by 20% through structured validation processes',
+    ],
+  },
+  {
+    role: 'Freelance AI & Web Application Developer',
+    company: 'Freelance',
+    period: 'Ongoing',
+    points: [
+      'Developed custom AI-powered web applications integrating LLMs for automation and intelligent workflows',
+      'Built end-to-end web solutions including frontend, backend, and AI model integration',
+      'Implemented API-based automation tools to streamline client operations',
+      'Delivered scalable AI features such as chatbots, data analysis tools, and workflow automation systems',
     ],
   },
 ];

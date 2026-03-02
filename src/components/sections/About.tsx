@@ -21,10 +21,10 @@ export default function About() {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                I am a Data Science and Applied AI professional with hands-on experience in Machine Learning, Generative AI, and Data Engineering. I have worked on building intelligent systems using Python, SQL, and modern AI frameworks, including LLM-based applications and automation pipelines.
+                I&apos;m a B.Tech CSE graduate currently pursuing a PGDM in Data Science &amp; Applied AI, with hands-on experience in Machine Learning, Generative AI, and AI Agent development. I focus on building scalable AI-powered applications using Python, SQL, OpenAI API, LangChain, and modern data tooling.
               </p>
               <p>
-                My experience includes developing end-to-end AI solutions, from data preprocessing and model development to deployment and visualization. I am passionate about applying AI to solve real-world problems and improve decision-making through data-driven insights.
+                I&apos;ve worked across the full lifecycle of AI systems—data scraping and ETL, feature engineering and modeling, through to deployment and visualization—reducing manual effort and enabling data-driven decision-making. I enjoy turning messy real-world data into intelligent products that deliver measurable impact.
               </p>
             </div>
 
