@@ -21,10 +21,10 @@ export default function About() {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                I&apos;m a B.Tech CSE graduate currently pursuing a PGDM in Data Science &amp; Applied AI, with hands-on experience in Machine Learning, Generative AI, and AI Agent development. I focus on building scalable AI-powered applications using Python, SQL, OpenAI API, LangChain, and modern data tooling.
+                I&apos;m a B.Tech CSE graduate currently pursuing a PGDM in Data Science &amp; Applied AI, with hands-on experience across the end-to-end machine learning lifecycle—feature engineering, model training, evaluation, deployment, and monitoring. I focus on building scalable AI-powered applications and data pipelines using Python, SQL, OpenAI API, LangChain, and modern data tooling.
               </p>
               <p>
-                I&apos;ve worked across the full lifecycle of AI systems—data scraping and ETL, feature engineering and modeling, through to deployment and visualization—reducing manual effort and enabling data-driven decision-making. I enjoy turning messy real-world data into intelligent products that deliver measurable impact.
+                I&apos;ve worked on Retrieval-Augmented Generation (RAG) systems, AI agents, and batch data processing workflows, combining vector databases, prompt engineering, and robust ETL to solve real-world problems. I enjoy turning messy real-world data into intelligent products that deliver measurable impact through automation and data-driven decision-making.
               </p>
             </div>
 

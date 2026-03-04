@@ -11,18 +11,20 @@ const experiences = [
     points: [
       'Developed an automated LinkedIn data scraping system extracting experience data of 1000+ professionals',
       'Reduced manual candidate profiling effort by 80% through Python-based automation',
-      'Built structured datasets for analytics and AI-driven insights',
+      'Designed structured datasets and preprocessing pipelines for downstream predictive modeling and AI-driven decision systems',
       'Implemented data cleaning and transformation pipelines for downstream ML tasks',
+      'Implemented modular Python scripts for scalable data extraction and transformation',
     ],
   },
   {
     role: 'AI/ML Intern – Computer Vision',
-    company: 'VertEx Plus Technologies Ltd.',
+    company: 'Vertex Plus Technologies Ltd.',
     period: 'May 2025 – July 2025',
     points: [
       'Built a CNN-based pole detection model achieving 95%+ accuracy',
       'Automated preprocessing pipeline for 10,000+ images, reducing manual effort by 70%',
       'Improved detection efficiency by 60% through model optimization and validation',
+      'Performed model evaluation using precision, recall, and F1-score, and optimized hyperparameters to improve generalization performance',
     ],
   },
   {
@@ -30,8 +32,9 @@ const experiences = [
     company: 'Celebal Technologies',
     period: 'May 2024 – Aug 2024',
     points: [
-      'Processed and analyzed 500K+ records performing ETL and feature engineering',
+      'Designed and implemented scalable ETL pipelines handling 500K+ structured records, performing feature engineering and data validation',
       'Designed Power BI dashboards reducing business decision time by 30%',
+      'Optimized SQL-based data extraction and transformation processes improving data processing efficiency',
       'Improved data quality metrics by 20% through structured validation processes',
     ],
   },
@@ -40,10 +43,10 @@ const experiences = [
     company: 'Freelance',
     period: 'Ongoing',
     points: [
-      'Developed custom AI-powered web applications integrating LLMs for automation and intelligent workflows',
-      'Built end-to-end web solutions including frontend, backend, and AI model integration',
-      'Implemented API-based automation tools to streamline client operations',
-      'Delivered scalable AI features such as chatbots, data analysis tools, and workflow automation systems',
+      'Designed and deployed AI-powered web applications integrating LLMs for automation and intelligent workflows',
+      'Built REST-based backend services for scalable AI model inference and API integrations',
+      'Developed end-to-end systems including frontend, backend, database, and AI model orchestration',
+      'Implemented prompt engineering and retrieval pipelines to enhance contextual response accuracy',
     ],
   },
 ];
