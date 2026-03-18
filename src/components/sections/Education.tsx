@@ -14,7 +14,7 @@ const education = [
     degree: 'B.Tech – Computer Science and Engineering',
     institution: 'Poornima University, Jaipur',
     period: '2021 – 2025',
-    focus: 'CGPA: 7.0',
+    focus: 'CGPA: 6.5',
   },
 ];
 
