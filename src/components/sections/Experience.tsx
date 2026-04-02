@@ -1,118 +1,138 @@
 import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Briefcase } from 'lucide-react';
+import { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 
 const experiences = [
   {
-    role: 'AI Intern – Applied AI Program',
-    company: 'Imarticus Learning',
+    id: 'EXP_01',
+    role: 'AI Engineer Intern',
+    company: 'Imarticus Learning (Applied AI Program)',
     period: '2025 – Present',
+    status: 'Active',
     points: [
-      'Developed an automated LinkedIn data scraping system extracting experience data of 1000+ professionals',
-      'Reduced manual candidate profiling effort by 80% through Python-based automation',
-      'Designed structured datasets and preprocessing pipelines for downstream predictive modeling and AI-driven decision systems',
-      'Implemented data cleaning and transformation pipelines for downstream ML tasks',
-      'Implemented modular Python scripts for scalable data extraction and transformation',
+      'Built multi-step LLM agent using LangChain tool-calling to automate LinkedIn data extraction and candidate profiling for 1,000+ professionals, reducing manual effort by 80%.',
+      'Designed Agentic RAG pipeline combining document embedding, FAISS vector indexing, and an AI agent layer to enable intelligent Q&A over structured candidate datasets.',
+      'Implemented PII detection module using spaCy NER to identify and redact sensitive personal data (names, emails, phone numbers) before downstream model ingestion.',
+      'Built modular Python ETL pipelines for scalable data extraction, transformation, and validation supporting AI-driven decision systems.'
     ],
   },
   {
-    role: 'AI/ML Intern – Computer Vision',
+    id: 'EXP_02',
+    role: 'AI/ML Intern',
     company: 'Vertex Plus Technologies Ltd.',
-    period: 'May 2025 – July 2025',
+    period: 'May 2025 – Jul 2025',
+    status: 'Completed',
     points: [
-      'Built a CNN-based pole detection model achieving 95%+ accuracy',
-      'Automated preprocessing pipeline for 10,000+ images, reducing manual effort by 70%',
-      'Improved detection efficiency by 60% through model optimization and validation',
-      'Performed model evaluation using precision, recall, and F1-score, and optimized hyperparameters to improve generalization performance',
+      'Built CNN-based computer vision model (InceptionV3 backbone) achieving 95%+ accuracy on pole detection across 10,000+ images; automated preprocessing pipeline cut manual effort by 70%.',
+      'Improved detection efficiency by 60% via hyperparameter optimisation; evaluated model using precision, recall, and F1-score to ensure robust generalisation.'
     ],
   },
   {
+    id: 'EXP_03',
     role: 'Data Science Intern',
     company: 'Celebal Technologies',
     period: 'May 2024 – Aug 2024',
+    status: 'Completed',
     points: [
-      'Designed and implemented scalable ETL pipelines handling 500K+ structured records, performing feature engineering and data validation',
-      'Designed Power BI dashboards reducing business decision time by 30%',
-      'Optimized SQL-based data extraction and transformation processes improving data processing efficiency',
-      'Improved data quality metrics by 20% through structured validation processes',
+      'Designed and implemented scalable ETL pipelines handling 500K+ structured records; performed feature engineering and data validation to support downstream ML workflows.',
+      'Built Power BI dashboards that reduced business decision time by 30%; optimised SQL-based extraction improving data processing efficiency and data quality metrics by 20%.'
     ],
   },
   {
+    id: 'EXP_04',
     role: 'Freelance AI & Web Application Developer',
-    company: 'Freelance',
+    company: 'Independent',
     period: 'Ongoing',
+    status: 'Active',
     points: [
-      'Designed and deployed AI-powered web applications integrating LLMs for automation and intelligent workflows',
-      'Built REST-based backend services for scalable AI model inference and API integrations',
-      'Developed end-to-end systems including frontend, backend, database, and AI model orchestration',
-      'Implemented prompt engineering and retrieval pipelines to enhance contextual response accuracy',
+      'Architected and deployed AI-powered web applications integrating multi-step LLM agents for automation, document processing, and intelligent workflows.',
+      'Built REST-based backend services for scalable AI model inference, prompt management, and third-party API integrations.',
+      'Developed end-to-end systems (frontend, backend, database, AI orchestration) with retrieval pipelines enhancing contextual response accuracy.'
     ],
   },
 ];
 
 export default function Experience() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const [expanded, setExpanded] = useState<string | null>('EXP_01');
 
   return (
-    <section id="experience" className="section-padding bg-secondary/30">
-      <div className="section-container" ref={ref}>
+    <section id="experience" className="section-padding relative overflow-hidden bg-background">
+      <div className="section-container max-w-4xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold mb-4">
-            Experience
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Work <span className="text-gradient">Experience</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Building impactful data solutions across diverse industries
+          <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            Building impactful data solutions across diverse industries, from computer vision to large-scale data engineering.
           </p>
         </motion.div>
 
-        <div className="relative max-w-3xl mx-auto">
-          {/* Timeline line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
-
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              className={`relative flex items-start gap-6 mb-12 ${
-                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-              }`}
-            >
-              {/* Timeline dot */}
-              <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full bg-primary -translate-x-1/2 mt-1.5 z-10" />
-
-              {/* Content */}
-              <div className={`ml-10 md:ml-0 md:w-[calc(50%-2rem)] ${
-                index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8'
-              }`}>
-                <div className="card-glass p-6">
-                  <div className={`flex items-center gap-2 mb-2 ${
-                    index % 2 === 0 ? 'md:justify-end' : ''
-                  }`}>
-                    <Briefcase size={16} className="text-primary" />
-                    <span className="text-sm text-muted-foreground">{exp.period}</span>
+        <div className="space-y-6">
+          {experiences.map((exp, i) => {
+            const isOpen = expanded === exp.id;
+            return (
+              <motion.div
+                key={exp.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                className="card-glass overflow-hidden"
+              >
+                <button
+                  onClick={() => setExpanded(isOpen ? null : exp.id)}
+                  className="w-full text-left px-6 py-6 md:px-8 flex flex-col md:flex-row md:items-center justify-between gap-4 outline-none hover:bg-white/5 transition-colors"
+                >
+                  <div>
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className="text-xl font-bold text-white">{exp.role}</h3>
+                      <span className={`text-xs px-3 py-1 rounded-full font-medium ${
+                        exp.status === 'Active' ? 'bg-indigo-500/10 text-indigo-400' : 'bg-white/10 text-white/60'
+                      }`}>
+                        {exp.status}
+                      </span>
+                    </div>
+                    <div className="text-white/70 font-medium">{exp.company}</div>
                   </div>
-                  <h3 className="text-lg font-heading font-semibold">{exp.role}</h3>
-                  <p className="text-primary mb-4">{exp.company}</p>
-                  <ul className={`space-y-2 text-sm text-muted-foreground ${
-                    index % 2 === 0 ? 'md:text-right' : ''
-                  }`}>
-                    {exp.points.map((point, i) => (
-                      <li key={i}>{point}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+                  
+                  <div className="flex items-center justify-between md:justify-end gap-6 md:w-auto w-full">
+                    <span className="text-sm text-white/50">{exp.period}</span>
+                    <motion.div
+                      animate={{ rotate: isOpen ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="p-2 rounded-full bg-white/5 text-white/50"
+                    >
+                      <ChevronDown size={18} />
+                    </motion.div>
+                  </div>
+                </button>
+
+                <motion.div
+                  initial={false}
+                  animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  className="overflow-hidden bg-black/20"
+                >
+                  <div className="px-6 pb-6 pt-2 md:px-8">
+                    <ul className="space-y-3">
+                      {exp.points.map((pt, j) => (
+                        <li key={j} className="flex items-start gap-3 text-white/70 text-sm leading-relaxed">
+                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-indigo-500 flex-shrink-0" />
+                          <span>{pt}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

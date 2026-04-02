@@ -1,50 +1,103 @@
 import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
 import ProfileImage from '../ProfileImage';
 
-export default function About() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+const SKILLS = ['Python', 'LangChain', 'LlamaIndex', 'OpenAI', 'FAISS', 'TensorFlow'];
 
+const STAT_ITEMS = [
+  { label: 'Records Processed', value: '500K+' },
+  { label: 'AI Agents Built', value: '5+' },
+  { label: 'Images Analyzed', value: '10K+' },
+];
+
+export default function About() {
   return (
-    <section id="about" className="section-padding bg-secondary/30">
+    <section id="about" className="section-padding relative overflow-hidden bg-background">
       <div className="section-container">
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center" ref={ref}>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Left Text Column */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold mb-6">
-              About Me
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              About <span className="text-gradient">Me</span>
             </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
+            
+            <div className="space-y-6 text-lg text-white/70 leading-relaxed font-light mb-10">
               <p>
-                I&apos;m a B.Tech CSE graduate currently pursuing a PGDM in Data Science &amp; Applied AI, with hands-on experience across the end-to-end machine learning lifecycle feature engineering, model training, evaluation, deployment, and monitoring. I focus on building scalable AI-powered applications and data pipelines using Python, SQL, OpenAI API, LangChain, and modern data tooling.
+                As an Associate AI Engineer with a background in Computer Science (B.Tech) and Data Science & Applied AI (PGDM), I build end-to-end GenAI systems and intelligent workflows.
               </p>
               <p>
-                I&apos;ve worked on Retrieval-Augmented Generation (RAG) systems, AI agents, and batch data processing workflows, combining vector databases, prompt engineering, and robust ETL to solve real-world problems. I enjoy turning messy real-world data into intelligent products that deliver measurable impact through automation and data-driven decision-making.
+                I specialize in Agentic RAG pipelines and LLM-powered document intelligence. I have a proven track record delivering production-grade Python solutions — from automated ETL pipelines to multi-step AI agents featuring tool-calling, memory management, and retrieval-augmented reasoning. My toolkit focuses on LangChain, LlamaIndex, OpenAI APIs, and vector stores vector stores like FAISS and Pinecone.
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-3 mt-8">
-              {['Python', 'SQL', 'TensorFlow', 'LangChain', 'Power BI', 'AWS'].map((skill) => (
-                <span key={skill} className="skill-badge">
-                  {skill}
-                </span>
+            <div className="grid grid-cols-3 gap-6 mb-10">
+              {STAT_ITEMS.map((s, i) => (
+                <motion.div
+                  key={s.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 + i * 0.1, duration: 0.5 }}
+                  className="flex flex-col"
+                >
+                  <span className="text-3xl font-bold text-white mb-2">{s.value}</span>
+                  <span className="text-xs text-white/50 uppercase tracking-wider">{s.label}</span>
+                </motion.div>
               ))}
             </div>
+
+            <div>
+              <p className="text-sm font-medium text-white/80 mb-4 tracking-wide uppercase">Core Technologies</p>
+              <div className="flex flex-wrap gap-3">
+                {SKILLS.map((skill, i) => (
+                  <motion.span
+                    key={skill}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 + i * 0.05, duration: 0.4 }}
+                    className="skill-badge"
+                  >
+                    {skill}
+                  </motion.span>
+                ))}
+              </div>
+            </div>
+            
           </motion.div>
 
+          {/* Right Image Column */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
-            className="order-first md:order-last"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="relative lg:ml-auto"
           >
-            <ProfileImage />
+            {/* Abstract glow behind image */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-indigo-500/20 blur-[100px] rounded-full -z-10 pointer-events-none" />
+            
+            <div className="relative p-2 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm max-w-sm mx-auto">
+              {/* Profile Image Component assuming it renders an img tag */}
+              <div className="rounded-2xl overflow-hidden relative">
+                <ProfileImage />
+              </div>
+              
+              <div className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl shadow-xl">
+                <div className="flex items-center gap-3">
+                  <div className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="text-sm font-medium text-white">Available for Hire</span>
+                </div>
+              </div>
+            </div>
           </motion.div>
+          
         </div>
       </div>
     </section>

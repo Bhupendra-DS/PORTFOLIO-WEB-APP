@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Moon, Sun } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { name: 'About', href: '#about' },
@@ -13,37 +13,33 @@ const navLinks = [
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDark]);
-
   return (
     <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-background/80 backdrop-blur-lg border-b border-border/50' : ''
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className={`fixed top-4 left-4 right-4 max-w-5xl mx-auto z-50 transition-all duration-500 rounded-2xl ${
+        scrolled
+          ? 'bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)] py-2'
+          : 'bg-transparent py-4'
       }`}
     >
-      <nav className="section-container">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          <a href="#" className="font-heading text-xl font-semibold text-foreground">
-            Bhupendra Singh
+      <nav className="px-6 md:px-8">
+        <div className="flex items-center justify-between h-12 md:h-14">
+          <a href="#" className="font-heading text-xl font-bold text-white tracking-tight flex items-center gap-2">
+            <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-sm">
+              BS
+            </span>
+            <span className="hidden sm:block">Bhupendra</span>
           </a>
 
           {/* Desktop Nav */}
@@ -52,32 +48,21 @@ export default function Header() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
+                className="text-sm font-medium text-white/70 hover:text-white transition-colors duration-200"
               >
                 {link.name}
               </a>
             ))}
-            <button
-              onClick={() => setIsDark(!isDark)}
-              className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
-              aria-label="Toggle theme"
-            >
-              {isDark ? <Sun size={18} /> : <Moon size={18} />}
-            </button>
+            <a href="/BHUPENDRA_SINGH_CV.pdf" target="_blank" className="btn-primary py-2 px-5 text-sm rounded-lg">
+              Resume
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-4 md:hidden">
             <button
-              onClick={() => setIsDark(!isDark)}
-              className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
-              aria-label="Toggle theme"
-            >
-              {isDark ? <Sun size={18} /> : <Moon size={18} />}
-            </button>
-            <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2"
+              className="p-2 text-white/80 hover:text-white transition-colors"
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -90,22 +75,25 @@ export default function Header() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-border"
+            initial={{ opacity: 0, height: 0, y: -10 }}
+            animate={{ opacity: 1, height: 'auto', y: 0 }}
+            exit={{ opacity: 0, height: 0, y: -10 }}
+            className="md:hidden overflow-hidden bg-background/95 backdrop-blur-3xl border-t border-white/10 mt-2 rounded-b-2xl border border-x-white/10 border-b-white/10"
           >
-            <div className="section-container py-4 flex flex-col gap-4">
+            <div className="px-6 py-6 flex flex-col gap-5">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-base font-medium text-white/70 hover:text-white transition-colors"
                 >
                   {link.name}
                 </a>
               ))}
+              <a href="/BHUPENDRA_SINGH_CV.pdf" target="_blank" className="btn-primary mt-2 justify-center py-3 text-sm rounded-lg">
+                Download Resume
+              </a>
             </div>
           </motion.div>
         )}

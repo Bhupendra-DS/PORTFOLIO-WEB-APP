@@ -1,0 +1,1 @@
+const fs = require('fs'); const pdf = require('pdf-parse'); let dataBuffer = fs.readFileSync('..\\public\\bhupendra_singh_cv_2_apr.pdf'); pdf(dataBuffer).then(function(data) { console.log(data.text); });

@@ -1,154 +1,116 @@
 import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Code2, Brain, Sparkles, Database, Cloud } from 'lucide-react';
+import { Code2, Brain, Sparkles, Database, Cloud, FileText } from 'lucide-react';
 
 const skillCategories = [
   {
-    title: 'Programming',
-    icon: Code2,
-    skills: ['Python', 'SQL', 'Bash (Basics)'],
+    title: 'AI Agents & Orchestration',
+    icon: Sparkles,
+    skills: ['LangChain Agents', 'LlamaIndex', 'Tool-calling', 'Memory Management', 'ReAct', 'Plan-and-Execute loops'],
   },
   {
-    title: 'Machine Learning & AI',
+    title: 'GenAI & LLM Systems',
     icon: Brain,
+    skills: [
+      'OpenAI API',
+      'HuggingFace',
+      'Prompt Engineering',
+      'RAG',
+      'Agentic RAG',
+      'LLM Evaluation',
+    ],
+  },
+  {
+    title: 'Document Intelligence',
+    icon: FileText,
+    skills: [
+      'Document Classification',
+      'PII Detection',
+      'spaCy NER',
+      'Microsoft Presidio',
+      'Structured Extraction',
+    ],
+  },
+  {
+    title: 'Vector Stores',
+    icon: Database,
+    skills: [
+      'FAISS',
+      'Pinecone',
+      'Weaviate',
+      'Embedding Pipelines',
+      'Retrieval Optimization',
+    ],
+  },
+  {
+    title: 'ML & Deep Learning',
+    icon: Code2,
     skills: [
       'Scikit-learn',
       'TensorFlow',
       'PyTorch',
-      'Deep Learning',
-      'Model Training & Validation',
-      'Model Evaluation',
-      'Cross-Validation',
-      'Hyperparameter Tuning',
-      'Statistical Modeling',
-      'Predictive Analytics',
-      'Bias-Variance Analysis',
-      'Feature Engineering',
+      'CNNs',
+      'LSTM',
+      'Cross-validation',
     ],
   },
   {
-    title: 'Data Engineering & Databases',
-    icon: Database,
-    skills: [
-      'ETL Pipelines',
-      'Data Cleaning',
-      'Data Transformation',
-      'Data Modeling',
-      'Pandas',
-      'NumPy',
-      'PostgreSQL',
-      'MySQL',
-      'Snowflake (Basics)',
-      'SQL Optimization',
-    ],
-  },
-  {
-    title: 'Big Data & Processing',
-    icon: Database,
-    skills: [
-      'Apache Spark (Basics)',
-      'PySpark (Basics)',
-      'Hadoop (Fundamentals)',
-      'Large Dataset Handling (500K+ records)',
-    ],
-  },
-  {
-    title: 'MLOps, Deployment & Cloud',
+    title: 'Data Engineering & MLOps',
     icon: Cloud,
     skills: [
-      'Streamlit',
-      'Flask',
+      'ETL Pipelines',
+      'PostgreSQL',
+      'Streamlit/Flask',
       'REST APIs',
-      'Docker (Fundamentals)',
-      'AWS (EC2, Lambda, S3 – Basics)',
-      'Model Deployment',
-      'Experiment Tracking (Logging & Versioning)',
-      'CI/CD (Fundamentals)',
+      'Docker (Basics)',
+      'AWS (EC2/S3)',
     ],
-  },
-  {
-    title: 'Generative AI & LLM Systems',
-    icon: Sparkles,
-    skills: [
-      'OpenAI API',
-      'LangChain',
-      'Hugging Face',
-      'RAG Pipelines',
-      'Prompt Engineering',
-      'AI Agents',
-      'Vector Databases (FAISS – Basics)',
-    ],
-  },
-  {
-    title: 'Data Visualization & Tools',
-    icon: Code2,
-    skills: ['Power BI', 'Matplotlib', 'Seaborn', 'Git', 'GitHub', 'Jupyter Notebook', 'VS Code'],
   },
 ];
 
 export default function Skills() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
-
   return (
-    <section id="skills" className="section-padding">
-      <div className="section-container" ref={ref}>
+    <section id="skills" className="section-padding relative overflow-hidden bg-background">
+      <div className="section-container">
+        
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold mb-4">
-            Skills & Expertise
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Technical <span className="text-gradient">Skills</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive toolkit for building end-to-end data and AI solutions
+          <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            A comprehensive toolkit for building end-to-end data and AI solutions, 
+            with a strong focus on generative modeling, agentic systems, and document intelligence.
           </p>
         </motion.div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          {skillCategories.map((category) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skillCategories.map((category, index) => {
             const Icon = category.icon;
+            // Highlight the GenAI and Agents categories slightly larger if needed, but 6 fits well into 3x2 grid.
             return (
               <motion.div
                 key={category.title}
-                variants={itemVariants}
-                className="card-glass p-6 group hover:border-primary/30 transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="card-glass p-8 flex flex-col"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
-                    <Icon size={20} />
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-3 bg-indigo-500/10 text-indigo-400 rounded-xl">
+                    <Icon size={24} />
                   </div>
-                  <h3 className="font-heading font-semibold">{category.title}</h3>
+                  <h3 className="text-xl font-bold text-white tracking-tight">{category.title}</h3>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="text-sm px-2.5 py-1 rounded-md bg-secondary text-secondary-foreground"
-                    >
+                
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {category.skills.map(skill => (
+                    <span key={skill} className="skill-badge bg-white/5 border-white/5 text-white/70 hover:bg-white/10 hover:text-white">
                       {skill}
                     </span>
                   ))}
@@ -156,7 +118,8 @@ export default function Skills() {
               </motion.div>
             );
           })}
-        </motion.div>
+        </div>
+
       </div>
     </section>
   );

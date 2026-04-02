@@ -1,101 +1,105 @@
 import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
 import { GraduationCap, Award } from 'lucide-react';
 
 const education = [
   {
+    id: 'EDU_01',
     degree: 'PGDM – Data Science & Applied AI',
     institution: 'Imarticus Learning, Bangalore',
     period: '2025 – Present',
-    focus: '',
+    detail: '',
+    status: 'Active',
   },
   {
-    degree: 'B.Tech – Computer Science and Engineering',
+    id: 'EDU_02',
+    degree: 'B.Tech – Computer Science & Engineering',
     institution: 'Poornima University, Jaipur',
     period: '2021 – 2025',
-    focus: 'CGPA: 6.5',
+    detail: 'CGPA: 6.5 / 10',
+    status: 'Completed',
   },
 ];
 
 const certifications = [
-  'Generative AI with Agentic AI – Udemy',
-  'Center of Excellence in Data Science – Celebal Technologies',
-  'Data Science Internship – Celebal Technologies',
+  { label: 'Generative AI with Agentic AI', issuer: 'Udemy' },
+  { label: 'Centre of Excellence in Data Science', issuer: 'Celebal Technologies' },
+  { label: 'Data Science Internship Certificate', issuer: 'Celebal Technologies' },
 ];
 
 export default function Education() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
   return (
-    <section className="section-padding bg-secondary/30">
-      <div className="section-container" ref={ref}>
+    <section id="education" className="section-padding relative overflow-hidden bg-background">
+      <div className="section-container max-w-5xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold mb-4">
-            Education & Certifications
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Education &amp; <span className="text-gradient">Certifications</span>
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Education */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {/* Education column */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                <GraduationCap size={20} />
+            <div className="flex items-center gap-3 mb-8">
+              <div className="p-3 rounded-xl bg-indigo-500/10 text-indigo-400">
+                <GraduationCap size={24} />
               </div>
-              <h3 className="text-xl font-heading font-semibold">Education</h3>
+              <h3 className="text-2xl font-bold text-white tracking-tight">Academic Profile</h3>
             </div>
-
-            <div className="space-y-6">
-              {education.map((edu, index) => (
-                <div
-                  key={index}
-                  className="relative pl-6 border-l-2 border-border hover:border-primary transition-colors"
-                >
-                  <div className="absolute left-0 top-0 w-2 h-2 rounded-full bg-primary -translate-x-[5px]" />
-                  <span className="text-sm text-muted-foreground">{edu.period}</span>
-                  <h4 className="font-medium mt-1">{edu.degree}</h4>
-                  <p className="text-primary">{edu.institution}</p>
-                  <p className="text-sm text-muted-foreground mt-1">{edu.focus}</p>
+            
+            <div className="space-y-4">
+              {education.map((edu, i) => (
+                <div key={edu.id} className="card-glass p-6 group">
+                  <div className="flex justify-between items-start mb-3">
+                    <span className={`text-xs px-3 py-1 rounded-full font-medium ${
+                      edu.status === 'Active' ? 'bg-indigo-500/10 text-indigo-400' : 'bg-white/10 text-white/50'
+                    }`}>
+                      {edu.status}
+                    </span>
+                    <span className="text-sm text-white/40">{edu.period}</span>
+                  </div>
+                  <h4 className="text-lg font-bold text-white mb-2 group-hover:text-amber-100 transition-colors">{edu.degree}</h4>
+                  <p className="text-white/60 text-sm mb-3">{edu.institution}</p>
+                  {edu.detail && <p className="text-white/40 text-sm font-medium">{edu.detail}</p>}
                 </div>
               ))}
             </div>
           </motion.div>
 
-          {/* Certifications */}
+          {/* Certifications column */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                <Award size={20} />
+            <div className="flex items-center gap-3 mb-8">
+              <div className="p-3 rounded-xl bg-purple-500/10 text-purple-400">
+                <Award size={24} />
               </div>
-              <h3 className="text-xl font-heading font-semibold">Certifications</h3>
+              <h3 className="text-2xl font-bold text-white tracking-tight">Licenses & Certifications</h3>
             </div>
-
-            <div className="flex flex-wrap gap-3">
-              {certifications.map((cert, index) => (
-                <motion.div
-                  key={cert}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                  className="skill-badge"
-                >
-                  {cert}
-                </motion.div>
+            
+            <div className="space-y-4">
+              {certifications.map((cert, i) => (
+                <div key={cert.label} className="card-glass p-6 group flex gap-4 items-center">
+                  <div className="flex-1">
+                    <h4 className="text-lg font-semibold text-white mb-1 group-hover:text-indigo-200 transition-colors">{cert.label}</h4>
+                    <p className="text-white/50 text-sm flex items-center gap-2">
+                       {cert.issuer}
+                    </p>
+                  </div>
+                </div>
               ))}
             </div>
           </motion.div>
