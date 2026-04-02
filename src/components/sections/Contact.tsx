@@ -60,16 +60,16 @@ export default function Contact() {
                 transition={{ delay: 0.2 + i * 0.1, duration: 0.5 }}
                 className="card-glass p-6 lg:p-8 flex items-center justify-between group hover:-translate-y-1 transition-all"
               >
-                <div className="flex items-center gap-4">
-                  <div className="p-4 rounded-xl bg-white/5 text-white group-hover:bg-indigo-500/20 group-hover:text-indigo-400 transition-colors">
+                <div className="flex items-center gap-4 overflow-hidden mr-3">
+                  <div className="p-4 rounded-xl bg-white/5 text-white group-hover:bg-indigo-500/20 group-hover:text-indigo-400 transition-colors flex-shrink-0">
                     <Icon size={24} />
                   </div>
-                  <div className="text-left max-w-[150px] sm:max-w-none">
-                    <h3 className="text-lg font-bold text-white mb-1 group-hover:text-indigo-200 transition-colors">{link.name}</h3>
+                  <div className="text-left min-w-0 flex-1">
+                    <h3 className="text-lg font-bold text-white mb-1 group-hover:text-indigo-200 transition-colors truncate">{link.name}</h3>
                     <p className="text-white/50 text-sm truncate">{link.value}</p>
                   </div>
                 </div>
-                <ArrowUpRight size={20} className="text-white/30 group-hover:text-indigo-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                <ArrowUpRight size={20} className="text-white/30 group-hover:text-indigo-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all flex-shrink-0" />
               </motion.a>
             );
           })}
