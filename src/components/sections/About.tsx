@@ -29,10 +29,10 @@ export default function About() {
             
             <div className="space-y-6 text-lg text-white/70 leading-relaxed font-light mb-10">
               <p>
-                As an Associate AI Engineer with a background in Computer Science (B.Tech) and Data Science & Applied AI (PGDM), I build end-to-end GenAI systems and intelligent workflows.
+                B.Tech CSE graduate (PGDM-Data Science & Applied AI) with hands-on experience building end-to-end GenAI systems: Agentic RAG pipelines, LLM-powered document intelligence workflows. Skilled in LangChain, LlamaIndex, OpenAI API, HuggingFace, and FAISS/Pinecone vector stores.
               </p>
               <p>
-                I specialize in Agentic RAG pipelines and LLM-powered document intelligence. I have a proven track record delivering production-grade Python solutions — from automated ETL pipelines to multi-step AI agents featuring tool-calling, memory management, and retrieval-augmented reasoning. My toolkit focuses on LangChain, LlamaIndex, OpenAI APIs, and vector stores vector stores like FAISS and Pinecone.
+                Proven track record delivering production-grade Python solutions from automated ETL pipelines to multi-step AI agents with tool-calling, memory management, and retrieval-augmented reasoning. Eager to apply these capabilities to large-scale legal document datasets.
               </p>
             </div>
 
