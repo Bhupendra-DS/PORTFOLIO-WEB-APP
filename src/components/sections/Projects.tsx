@@ -14,7 +14,7 @@ const projects = [
     impact: 'Modular backend handling concurrent requests. Added PII redaction to sanitise resumes before LLM processing. Improved user engagement by 45%.',
     github: 'https://github.com/Bhupendra-DS/Interview-Mate.git',
     demo: '#',
-    status: 'Deployed',
+    status: 'Completed',
   },
   {
     id: 'P02',
@@ -26,7 +26,7 @@ const projects = [
     impact: 'Reduced manual exploratory analysis effort by 80%.',
     github: 'https://github.com/Bhupendra-DS/Auto-EDA-Analyzer.git',
     demo: '#',
-    status: 'Deployed',
+    status: 'Completed',
   },
   {
     id: 'P03',
