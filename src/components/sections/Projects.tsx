@@ -24,7 +24,7 @@ const projects = [
     description:
       'Built an automated EDA system generating statistical reports (feature distribution, correlation, anomaly detection) within 15 seconds per dataset. Integrated OpenAI API for natural-language insight narration.',
     impact: 'Reduced manual exploratory analysis effort by 80%.',
-    github: 'https://github.com/Bhupendra-DS/auto-eda-generator',
+    github: 'https://github.com/Bhupendra-DS/Auto-EDA-Analyzer.git',
     demo: '#',
     status: 'Deployed',
   },
@@ -94,9 +94,8 @@ export default function Projects() {
             <button
               onClick={scrollPrev}
               disabled={!prevBtnEnabled}
-              className={`p-3 rounded-full border border-white/10 transition-all ${
-                prevBtnEnabled ? 'bg-white/5 hover:bg-white/10 text-white' : 'opacity-30 cursor-not-allowed text-white/50'
-              }`}
+              className={`p-3 rounded-full border border-white/10 transition-all ${prevBtnEnabled ? 'bg-white/5 hover:bg-white/10 text-white' : 'opacity-30 cursor-not-allowed text-white/50'
+                }`}
               aria-label="Previous project"
             >
               <ChevronLeft size={24} />
@@ -104,9 +103,8 @@ export default function Projects() {
             <button
               onClick={scrollNext}
               disabled={!nextBtnEnabled}
-              className={`p-3 rounded-full border border-white/10 transition-all ${
-                nextBtnEnabled ? 'bg-white/5 hover:bg-white/10 text-white' : 'opacity-30 cursor-not-allowed text-white/50'
-              }`}
+              className={`p-3 rounded-full border border-white/10 transition-all ${nextBtnEnabled ? 'bg-white/5 hover:bg-white/10 text-white' : 'opacity-30 cursor-not-allowed text-white/50'
+                }`}
               aria-label="Next project"
             >
               <ChevronRight size={24} />
@@ -146,7 +144,7 @@ export default function Projects() {
                   <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-400 group-hover:to-purple-500 transition-all duration-300">
                     {project.title}
                   </h3>
-                  
+
                   <p className="text-white/60 text-sm leading-relaxed mb-6 flex-grow">
                     {project.description}
                   </p>
