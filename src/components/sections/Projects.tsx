@@ -40,6 +40,30 @@ const projects = [
     demo: '#',
     status: 'Completed',
   },
+  {
+    id: 'P04',
+    title: 'Bengaluru Traffic Optimization',
+    problem: 'Traffic congestion and unpredictable commute times in Bengaluru cause significant delays.',
+    techStack: ['Machine Learning', 'Python', 'Pandas', 'Scikit-Learn'],
+    description:
+      'Machine learning-based traffic prediction and commute planning system for Bengaluru, designed to help commuters estimate congestion, delay, and optimal departure time using historical patterns.',
+    impact: 'Optimizes commute planning by providing accurate delay estimations based on dynamic traffic conditions.',
+    github: 'https://github.com/Bhupendra-DS/bengaluru-traffic-optimization',
+    demo: '#',
+    status: 'Completed',
+  },
+  {
+    id: 'P05',
+    title: 'LinkedIn Scraper',
+    problem: 'Manual extraction of professional profiles and job data from LinkedIn is tedious and slow.',
+    techStack: ['Python', 'BeautifulSoup', 'Selenium', 'Data Extraction'],
+    description:
+      'An automated web scraping tool designed to efficiently extract professional profile information, network connections, and job data from LinkedIn.',
+    impact: 'Streamlines targeted outreach and dataset generation for hiring and networking workflows.',
+    github: 'https://github.com/Bhupendra-DS/linkdin_scraper',
+    demo: '#',
+    status: 'Completed',
+  },
 ];
 
 export default function Projects() {
@@ -91,6 +115,9 @@ export default function Projects() {
           </div>
 
           <div className="flex items-center gap-3">
+            <div className="hidden sm:block text-white/60 text-sm font-medium mr-2 bg-indigo-500/10 px-4 py-2 rounded-full border border-indigo-500/20">
+              {projects.length} Projects Available
+            </div>
             <button
               onClick={scrollPrev}
               disabled={!prevBtnEnabled}
